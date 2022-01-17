@@ -2,14 +2,14 @@
 
 <h2>Edit</h2>
 
-<h4>Edit this Treat: @Html.DisplayFor(model => model.Name)</h4>
+<h4>Edit this Treat: @Html.DisplayFor(model => model.TreatName)</h4>
 
 @using (Html.BeginForm())
 {
     @Html.HiddenFor(model => model.TreatId)
 
-    @Html.LabelFor(model => model.Name)
-    @Html.EditorFor(model => model.Name)
+    @Html.LabelFor(model => model.TreatName)
+    @Html.EditorFor(model => model.TreatName)
 
     @Html.Label("Select flavour")
     @Html.DropDownList("FlavourId")

@@ -10,7 +10,7 @@ namespace SweetTreat.Models
     }
 
     public int FlavorId { get; set; }
-    public string Name { get; set; }
+    public string FlavorName { get; set; }
 
     public virtual ICollection<FlavorTreat> JoinEntities { get; set; }
   }

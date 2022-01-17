@@ -22,7 +22,7 @@ namespace SweetTreat.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("FlavorName")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.HasKey("FlavorId");
@@ -57,7 +57,7 @@ namespace SweetTreat.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("TreatName")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.HasKey("TreatId");

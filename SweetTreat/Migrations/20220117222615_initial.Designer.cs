@@ -8,8 +8,8 @@ using SweetTreat.Models;
 namespace SweetTreat.Migrations
 {
     [DbContext(typeof(SweetTreatContext))]
-    [Migration("20220117214209_table")]
-    partial class table
+    [Migration("20220117222615_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -24,7 +24,7 @@ namespace SweetTreat.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("FlavorName")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.HasKey("FlavorId");
@@ -59,7 +59,7 @@ namespace SweetTreat.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("TreatName")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.HasKey("TreatId");

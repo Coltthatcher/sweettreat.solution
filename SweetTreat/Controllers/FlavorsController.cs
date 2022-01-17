@@ -47,7 +47,7 @@ namespace SweetTreat.Controllers
     public ActionResult Edit (int id)
     {
       var thisFlavor = _db.Flavors.FirstOrDefault(Flavor => Flavor.FlavorId == id);
-      ViewBag.TreatId = new SelectList(_db.Treats, "TreatId", "Name");
+      ViewBag.TreatId = new SelectList(_db.Treats, "TreatId", "FlavorName");
       return View(thisFlavor);
     }
 
@@ -77,7 +77,7 @@ namespace SweetTreat.Controllers
     public ActionResult AddTreat(int id)
     {
       var thisFlavor = _db.Flavors.FirstOrDefault(flavor => flavor.FlavorId == id);
-      ViewBag.TreatList = new SelectList(_db.Treats, "TreatId", "Name");
+      ViewBag.TreatList = new SelectList(_db.Treats, "TreatId", "FlavorName");
       return View(thisFlavor);
     }
 
