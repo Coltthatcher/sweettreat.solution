@@ -19,7 +19,7 @@ namespace SweetTreat.Controllers
 
     public ActionResult Index()
     {
-      return View(_db.Treats.ToList());
+      return View();
     }
 
     public ActionResult Create()
