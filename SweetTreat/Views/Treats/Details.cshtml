@@ -1,0 +1,26 @@
+@model SweetTreat.Models.Treat
+
+<h2>Treat Details</h2>
+<hr />
+<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+
+@if(@Model.JoinEntities.Count == 0)
+{
+  <p>This machine is not being worked on by any engineers</p>
+}
+else
+{
+  <h4>Engineers with the credintials to work on this machine :</h4>
+  <ul>
+  @foreach(var join in Model.JoinEntities)
+  {
+    <li>@join.Flavor.Name</li>
+  }
+  </ul>
+}
+
+<p>@Html.ActionLink("Back to list", "Index")</p>
+<p>@Html.ActionLink("Edit Treat", "Edit", new { id = Model.TreatId })</p>
+<p>@Html.ActionLink("Delete Treat", "Delete", new { id = Model.TreatId })</p> 
+<p>@Html.ActionLink("Add a Flavor", "AddFlavor", new { id = Model.TreatId })</p>
+<p>@Html.ActionLink("Home", "Index", "Home")</p>
