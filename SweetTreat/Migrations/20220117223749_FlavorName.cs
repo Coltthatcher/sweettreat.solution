@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SweetTreat.Migrations
 {
-    public partial class initial : Migration
+    public partial class FlavorName : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
