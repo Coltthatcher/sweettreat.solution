@@ -8,8 +8,8 @@ using SweetTreat.Models;
 namespace SweetTreat.Migrations
 {
     [DbContext(typeof(SweetTreatContext))]
-    [Migration("20220117194501_initial")]
-    partial class initial
+    [Migration("20220117214209_table")]
+    partial class table
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
