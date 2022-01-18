@@ -9,8 +9,8 @@ using SweetTreat.Models;
 namespace SweetTreat.Migrations
 {
     [DbContext(typeof(SweetTreatContext))]
-    [Migration("20220117231521_addIdentity")]
-    partial class addIdentity
+    [Migration("20220118004315_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -220,7 +220,12 @@ namespace SweetTreat.Migrations
                     b.Property<string>("FlavorName")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
+                    b.Property<string>("UserId")
+                        .HasColumnType("varchar(255) CHARACTER SET utf8mb4");
+
                     b.HasKey("FlavorId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Flavors");
                 });
@@ -255,7 +260,12 @@ namespace SweetTreat.Migrations
                     b.Property<string>("TreatName")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
+                    b.Property<string>("UserId")
+                        .HasColumnType("varchar(255) CHARACTER SET utf8mb4");
+
                     b.HasKey("TreatId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Treats");
                 });
@@ -311,6 +321,15 @@ namespace SweetTreat.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("SweetTreat.Models.Flavor", b =>
+                {
+                    b.HasOne("SweetTreat.Models.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("SweetTreat.Models.FlavorTreat", b =>
                 {
                     b.HasOne("SweetTreat.Models.Flavor", "Flavor")
@@ -328,6 +347,15 @@ namespace SweetTreat.Migrations
                     b.Navigation("Flavor");
 
                     b.Navigation("Treat");
+                });
+
+            modelBuilder.Entity("SweetTreat.Models.Treat", b =>
+                {
+                    b.HasOne("SweetTreat.Models.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("SweetTreat.Models.Flavor", b =>
