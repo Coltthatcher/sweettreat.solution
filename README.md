@@ -16,7 +16,7 @@
 
 ## Description
 
-_Project for a bakery so adims can add differnt flavors to treats_
+_Project for a bakery so admins can add different flavors to treats_
 
 ## Setup/Installation Requirements
 * _Install .NET 5.0 [Here](https://dotnet.microsoft.com/en-us/download/dotnet/5.0)_
@@ -36,12 +36,13 @@ _Project for a bakery so adims can add differnt flavors to treats_
 ## Setting Up A Database
 
 * Add the name of your database and password to the appsettings.json file_
-* _To update the databse, run the command: $ dotnet ef database update._
+* _To update the database, run the command: $ dotnet ef database update._
+
 
 
 ## Running the website
 
-* _Go to the Factory Root folder with the command `cd SweetTreat` in Git or Terminal._
+* _Go to the SweetTreat Root folder with the command `cd SweetTreat` in Git or Terminal._
 * _You will need to run `dotnet restore` in the file above to add bin/obj files which are required for your program to run correctly._
 * _The last step to see the website running is `dotnet run` in Git or terminal (you will still be in the root directory), you will need to follow the link provided by `localhost:5000` to see the website._
 
