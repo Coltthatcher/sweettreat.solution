@@ -1,6 +1,6 @@
 #### Created By _**Colton Thatcher**_
 
-#### _SillyBand Factory_
+#### _SweetTreat_
 
 ## Technologies Used
 
@@ -12,11 +12,12 @@
 * _Razor View Engine_
 * _MySQL and MySQL Workbench_
 * _GIT_
+* _Identity_
 
 
 ## Description
 
-_Project for a bakery so admins can add different flavors to treats_
+_Project for a bakery so admins can add different flavors to treats, using many to many relationships, the project also utilizes authentication and authorization functionality_
 
 ## Setup/Installation Requirements
 * _Install .NET 5.0 [Here](https://dotnet.microsoft.com/en-us/download/dotnet/5.0)_
@@ -36,7 +37,7 @@ _Project for a bakery so admins can add different flavors to treats_
 ## Setting Up A Database
 
 * Add the name of your database and password to the appsettings.json file_
-* _To update the database, run the command: $ dotnet ef database update._
+* _To update the database, run the command: `dotnet ef database update`._
 
 
 
@@ -45,6 +46,9 @@ _Project for a bakery so admins can add different flavors to treats_
 * _Go to the SweetTreat Root folder with the command `cd SweetTreat` in Git or Terminal._
 * _You will need to run `dotnet restore` in the file above to add bin/obj files which are required for your program to run correctly._
 * _The last step to see the website running is `dotnet run` in Git or terminal (you will still be in the root directory), you will need to follow the link provided by `localhost:5000` to see the website._
+* _Once you have the website up and running, make sure to create an account with `create an account` link on the home.
+* _You will be prompted to enter email and a password_
+* _After that you can switch between viewing Treats and Flavors using the hyperlinks provided to use functionality on the website_
 
 
 

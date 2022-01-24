@@ -9,8 +9,8 @@ using SweetTreat.Models;
 namespace SweetTreat.Migrations
 {
     [DbContext(typeof(SweetTreatContext))]
-    [Migration("20220118004432_Authorization")]
-    partial class Authorization
+    [Migration("20220120201948_all")]
+    partial class all
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

@@ -2,7 +2,7 @@
 
 namespace SweetTreat.Migrations
 {
-    public partial class Any : Migration
+    public partial class addIdentity : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
