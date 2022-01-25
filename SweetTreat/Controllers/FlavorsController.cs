@@ -21,7 +21,7 @@ namespace SweetTreat.Controllers
       _db = db;
     }
 
-    [Authorize]
+    
     public async Task<ActionResult> Index()
     {
       var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
@@ -37,11 +37,19 @@ namespace SweetTreat.Controllers
     }
 
     [HttpPost]
-    public ActionResult Create(Flavor flavor)
+    public async Task<ActionResult> Create(Flavor flavor, int TreatId)
     {
+      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      var currentUser = await _userManager.FindByIdAsync(userId);
+      flavor.User = currentUser;
       _db.Flavors.Add(flavor);
       _db.SaveChanges();
-      return RedirectToAction("Index");
+      if (TreatId != 0)
+      {
+          _db.FlavorTreat.Add(new FlavorTreat() { TreatId = TreatId, FlavorId = flavor.FlavorId });
+      }
+      _db.SaveChanges();
+      return RedirectToAction("Index"); 
     }
 
     public ActionResult Details(int id)
